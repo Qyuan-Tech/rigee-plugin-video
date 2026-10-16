@@ -9,7 +9,7 @@ editor is split.
 
 In Rigee, open the **Plugins** view, search for `video` and install **Qyuan-Tech/rigee-plugin-video**.
 Rigee downloads the latest release, checks it against the checksum GitHub reports for it, and asks
-before anything runs. It needs Rigee 0.0.1-alpha.6 or later.
+before anything runs. It needs Rigee 1.1.0 or later.
 
 What it declares: **read files on this computer** — the video being played. As with every Rigee
 plugin, that is a statement of what it is for, not a limit Rigee enforces.
@@ -42,8 +42,6 @@ npm pack                # rigee-plugin-video-<version>.tgz, the release asset
 
 To try a build in Rigee without publishing it, unpack the tarball's `package/` into
 `<userData>/plugins/video/` and approve it in the Plugins view.
-
-`@rigee/plugin-api` is not on npm yet; `vendor/` holds the copy this plugin is built against.
 
 ## Releasing
 
