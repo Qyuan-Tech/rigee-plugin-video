@@ -1,0 +1,53 @@
+{
+  "name": "rigee-plugin-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Play videos in Rigee — MP4, MOV, WebM, MKV and Ogg — streamed from disk, with seeking, speed and full screen.",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://github.com/Qyuan-Tech/rigee-plugin-video",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Qyuan-Tech/rigee-plugin-video.git"
+  },
+  "packageManager": "pnpm@10.29.2",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc",
+    "release:pack": "pnpm run typecheck && pnpm run build && npm pack"
+  },
+  "devDependencies": {
+    "@rigee/plugin-api": "file:vendor/rigee-plugin-api-0.2.0.tgz",
+    "@types/node": "24.13.5",
+    "@types/react": "19.3.0",
+    "cordis": "4.0.0-rc.10",
+    "esbuild": "0.28.2",
+    "typescript": "5.9.3"
+  },
+  "rigee": {
+    "id": "video",
+    "version": "1.0.0",
+    "displayName": "Video Player",
+    "description": "Play videos — MP4, MOV, WebM, MKV and Ogg — streamed from disk, with seeking, speed and full screen.",
+    "apiVersion": 1,
+    "minAppVersion": "0.0.1-alpha.6",
+    "permissions": ["files:read"],
+    "main": "dist/main.js",
+    "renderer": "dist/renderer.js",
+    "contributes": {
+      "editors": [
+        {
+          "viewType": "video.player",
+          "displayName": "Video Player",
+          "icon": "video",
+          "selector": { "extensions": ["mp4", "m4v", "mov", "webm", "mkv", "ogv"] }
+        }
+      ]
+    }
+  }
+}
